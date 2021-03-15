@@ -75,16 +75,18 @@ input, select, textarea {
 /* WHOLE PAGE */
 
 body {
-    background-color: rgb(161, 161, 224);
+    position: relative;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #222;
 }
 
 main {
-    width: 90vw;
-    height: 100vh;
+    width: 95vw;
+    height: 85vh;
     background-color: rgba(255, 255, 255, 0.801);
     display: flex;
     flex-direction: column;
@@ -93,11 +95,108 @@ main {
     filter: drop-shadow(0 0 5px #555);
 }
 
+#colorSwitcher {
+    position: fixed;
+    top: .5rem;
+    left: 1rem;
+    height: 2.5rem;
+    width: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+#colorSwitcher span {
+    height: .3rem;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #222;
+    transition: transform 300ms, opacity 300ms;
+}
+
+#colorSwitcher span:first-child.on {
+    transform-origin: left center;
+    transform: rotate(45deg);
+}
+
+#colorSwitcher span:nth-child(2).on {
+    opacity: 0;
+}
+
+#colorSwitcher span:last-child.on {
+    transform-origin: left center;
+    transform: rotate(-45deg);
+}
+
+#colorSwitcher span:first-child.off {
+    transform-origin: left center;
+    transform: rotate(0);
+}
+
+#colorSwitcher span:nth-child(2).off {
+    opacity: 1;
+}
+
+#colorSwitcher span:last-child.off {
+    transform-origin: left center;
+    transform: rotate(0);
+}
+
+#colorSwitcherMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    width: 100vw;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #dddb;
+    transform: translateY(-300px);
+    opacity: 0;
+    filter: drop-shadow(0 0 50px #7777);
+    transition: all 500ms ease-in-out;
+    z-index: 1;
+}
+
+#colorSwitcherMenu.on {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+#colorSwitcherMenu.off {
+    transform: translateY(-300px);
+    opacity: 0;
+}
+
+#colorSwitcherMenu a {
+    display: inline-block;
+    padding: .3rem;
+    font-size: 1.2rem;
+    text-decoration: unset;
+    color: #222;
+    transition: all 100ms;
+}
+
+#colorSwitcherMenu a:hover {
+    transform: scale(1.2);
+}
+
+#colorSwitcherMenu a:active,
+#colorSwitcherMenu a:visited {
+    color: #222;
+}
+
 /* NAVBAR */
 
 header {
     width: 100%;
     max-width: 100vw;
+    height: 12vh;
 }
 
 nav {
@@ -110,34 +209,39 @@ nav {
 }
 
 nav > p {
+    flex: 1;
     padding: .3rem 1rem;
-    width: 6rem;
+    margin: 0 2rem;
     text-align: center;
+    font-size: 1.15rem;
+    letter-spacing: .5pt;
     color: #222;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    box-shadow: 1px 1px 5px #555;
+    filter: drop-shadow(0 0 10px #aaa);
+    border-radius: 3px;
+    transition: all 500ms;
 }
 
 nav > p:first-child {
-    background-color:wheat;
+    background-color:hsl(242, 17%, 60%);
 }
 
 nav > p:nth-child(2) {
-    background-color:thistle;
+    background-color:hsl(242, 17%, 75%);
 }
 
 nav > p:nth-child(3) {
-    background-color:coral;
+    background-color:hsl(242, 17%, 90%);
 }
 
 nav > p:nth-child(4) {
-    background-color:tomato;
+    background-color:hsl(354, 20%, 75%);
 }
 
 nav > p:nth-child(5) {
-    background-color:darkseagreen;
+    background-color: hsl(354, 20%, 60%);
 }
 
 /* MAIN CONTENTS */
@@ -150,10 +254,32 @@ nav > p:nth-child(5) {
 }
 
 .title-box > h1 {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #222;
+    letter-spacing: 1.5pt;
 }
 
-.title-box > img {
-    max-width: 100%;
+#svg-wrapper {
+    margin-top: 2rem;
+    width: 40vw;
+    height: 100%;
 }
+
+#svg-wrapper svg {
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+}
+
+#variationOne {
+    display: flex;
+    opacity: 1;
+}
+
+#variationOne,
+#variationTwo,
+#variationThree {
+    transition: all 500ms;
+}
+
