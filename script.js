@@ -58,8 +58,8 @@ document.querySelector('#switchAllBlue').addEventListener('click', () => {
 });
 
 document.querySelector('#logoVarOne').addEventListener('click', () => {
-    document.querySelector('#variationOne').style.display = "flex";
     document.querySelector('#variationOne').style.opacity = "1";
+    document.querySelector('#variationOne').style.display = "flex";
     document.querySelector('#variationTwo').style.display = "none";
     document.querySelector('#variationTwo').style.opacity = "0";
     document.querySelector('#variationThree').style.display = "none";
@@ -69,8 +69,8 @@ document.querySelector('#logoVarOne').addEventListener('click', () => {
 document.querySelector('#logoVarTwo').addEventListener('click', () => {
     document.querySelector('#variationOne').style.display = "none";
     document.querySelector('#variationOne').style.opacity = "0";
-    document.querySelector('#variationTwo').style.display = "flex";
     document.querySelector('#variationTwo').style.opacity = "1";
+    document.querySelector('#variationTwo').style.display = "flex";
     document.querySelector('#variationThree').style.display = "none";
     document.querySelector('#variationThree').style.opacity = "0";
 });
