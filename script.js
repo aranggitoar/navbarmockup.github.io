@@ -8,12 +8,14 @@ colorSwitcher.addEventListener('click', () => {
     document.querySelector('#colorSwitcher span:first-child').classList.toggle('on');
     document.querySelector('#colorSwitcher span:last-child').classList.toggle('on');
     document.querySelector('#colorSwitcherMenu').classList.toggle('on');
-    colorSwitcher.addEventListener('click', () => {
-        document.querySelector('#colorSwitcher span:nth-child(2)').classList.toggle('off');
-        document.querySelector('#colorSwitcher span:first-child').classList.toggle('off');
-        document.querySelector('#colorSwitcher span:last-child').classList.toggle('off');
-        document.querySelector('#colorSwitcherMenu').classList.toggle('off');
-    })
+    if (document.querySelector('#colorSwitcherMenu').classList.contains('off') == false) {
+        colorSwitcher.addEventListener('click', () => {
+            document.querySelector('#colorSwitcher span:nth-child(2)').classList.toggle('off');
+            document.querySelector('#colorSwitcher span:first-child').classList.toggle('off');
+            document.querySelector('#colorSwitcher span:last-child').classList.toggle('off');
+            document.querySelector('#colorSwitcherMenu').classList.toggle('off');
+        });
+    };
 });
 
 document.querySelector('#switchMix').addEventListener('click', () => {
@@ -23,6 +25,10 @@ document.querySelector('#switchMix').addEventListener('click', () => {
     tabs[2].style.backgroundColor = "hsl(242, 17%, 90%)";
     tabs[3].style.backgroundColor = "hsl(354, 20%, 75%)";
     tabs[4].style.backgroundColor = "hsl(354, 20%, 60%)";
+    document.querySelector('#colorSwitcher span:nth-child(2)').classList.toggle('off');
+    document.querySelector('#colorSwitcher span:first-child').classList.toggle('off');
+    document.querySelector('#colorSwitcher span:last-child').classList.toggle('off');
+    document.querySelector('#colorSwitcherMenu').classList.toggle('off');
 });
 
 document.querySelector('#switchAllRed').addEventListener('click', () => {
@@ -32,6 +38,10 @@ document.querySelector('#switchAllRed').addEventListener('click', () => {
     tabs[2].style.backgroundColor = "hsl(354, 20%, 90%)";
     tabs[3].style.backgroundColor = "hsl(354, 20%, 75%)";
     tabs[4].style.backgroundColor = "hsl(354, 20%, 60%)";
+    document.querySelector('#colorSwitcher span:nth-child(2)').classList.toggle('off');
+    document.querySelector('#colorSwitcher span:first-child').classList.toggle('off');
+    document.querySelector('#colorSwitcher span:last-child').classList.toggle('off');
+    document.querySelector('#colorSwitcherMenu').classList.toggle('off');
 });
 
 document.querySelector('#switchAllBlue').addEventListener('click', () => {
@@ -41,6 +51,10 @@ document.querySelector('#switchAllBlue').addEventListener('click', () => {
     tabs[2].style.backgroundColor = "hsl(242, 17%, 90%)";
     tabs[3].style.backgroundColor = "hsl(242, 17%, 75%)";
     tabs[4].style.backgroundColor = "hsl(242, 17%, 60%)";
+    document.querySelector('#colorSwitcher span:nth-child(2)').classList.toggle('off');
+    document.querySelector('#colorSwitcher span:first-child').classList.toggle('off');
+    document.querySelector('#colorSwitcher span:last-child').classList.toggle('off');
+    document.querySelector('#colorSwitcherMenu').classList.toggle('off');
 });
 
 document.querySelector('#logoVarOne').addEventListener('click', () => {

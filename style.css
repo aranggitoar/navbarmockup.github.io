@@ -159,7 +159,7 @@ main {
     transform: translateY(-300px);
     opacity: 0;
     filter: drop-shadow(0 0 50px #7777);
-    transition: all 500ms ease-in-out;
+    transition: all 200ms ease-in-out;
     z-index: 1;
 }
 
@@ -270,11 +270,6 @@ nav > p:nth-child(5) {
     height: 100%;
     display: none;
     opacity: 0;
-}
-
-#variationOne {
-    display: flex;
-    opacity: 1;
 }
 
 #variationOne,
